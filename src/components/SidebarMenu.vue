@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     isAdmin () {
-      return JSON.parse(window.localStorage.getItem('user'))['isAdmin']
+      return this.$store.state.isAdmin
     }
   },
   data: function () {

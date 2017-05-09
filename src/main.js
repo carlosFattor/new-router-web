@@ -1,5 +1,6 @@
 // Import System requirements
 import Vue from 'vue'
+import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import { sync } from 'vuex-router-sync'
 import routes from './routes'
@@ -23,6 +24,7 @@ Vue.filter('domain', domain)
 Vue.filter('prettyDate', prettyDate)
 Vue.filter('pluralize', pluralize)
 
+Vue.use(Vuex)
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
 // Vue.use(axios)
@@ -53,7 +55,7 @@ Vue.http.interceptors.push(function (request, next) {
   request.headers['Accept'] = 'application/json'
   request.headers['Content-Type'] = 'application/json'
   request.headers['Access-Control-Allow-Origin'] = '*'
-  request.headers.set('Authorization', window.localStorage.getItem('token'))
+  request.headers.set('Authorization', store.state.token)
   next(function (response) {
     auth.checkExpiredToken(response, request)
       .then(function (response) {
@@ -64,7 +66,7 @@ Vue.http.interceptors.push(function (request, next) {
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.auth)) {
-    if (window.localStorage.getItem('token')) {
+    if (store.state.token) {
       next()
       return
     }
@@ -83,7 +85,7 @@ sync(store, router)
 // eslint-disable-next-line no-new
 new Vue({
   el: '#root',
-  router: router,
-  store: store,
+  router,
+  store,
   render: h => h(AppView)
 })

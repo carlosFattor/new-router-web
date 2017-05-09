@@ -75,7 +75,6 @@ export default {
           const isAdmin = data.isAdmin || null
           this.$store.commit('SET_USER', data.user)
           this.$store.commit('SET_TOKEN', token)
-
           if (isAdmin) {
             data.user.isAdmin = isAdmin
           }

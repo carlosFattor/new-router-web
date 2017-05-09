@@ -8,7 +8,6 @@ export default class Auth {
   checkExpiredToken (res, req) {
     const self = this
     return new Promise(function (resolve, reject) {
-      console.log(res)
       if (res.status === 401 && res.body.tokenException === 'GEN-TOKEN-EXPIRED') {
         self._refreshToken(this, req)
             .then(function (response) {
@@ -31,7 +30,6 @@ export default class Auth {
           resolve(newResponse)
         })
       }, function (newResponse) {
-        console.log('REJECT')
         window.localStorage.clear()
         self.router.go('/')
         reject(newResponse)
