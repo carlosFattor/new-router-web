@@ -9,12 +9,16 @@
 
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input class="form-control" name="email" placeholder="email" type="text" v-model="email">
+                <input class="form-control" name="email" placeholder="email" type="email" v-model="email">
               </div>
 
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                 <input class="form-control" name="password" placeholder="Password" type="password" v-model="password">
+              </div>
+
+              <div class="fill">
+                <router-link to="/recover-password">forgot password</router-link>
               </div>
               <button type="submit" v-bind:class="'btn btn-primary btn-lg ' + loading">Submit</button>
             </form>
@@ -131,5 +135,10 @@ html, body, .container-table {
 }
 .input-group input {
   height: 3em;
+}
+.fill { 
+  min-height: 100%;
+  height: 100%;
+  padding-bottom: 10px;
 }
 </style>

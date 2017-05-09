@@ -1,5 +1,7 @@
+const _user = JSON.parse(window.localStorage.getItem('user')) || {}
+
 export default {
-  user: JSON.parse(window.localStorage.getItem('user')),
+  user: _user,
   token: window.localStorage.getItem('token'),
-  isAdmin: JSON.parse(window.localStorage.getItem('user'))['isAdmin']
+  isAdmin: _user.isAdmin || false
 }

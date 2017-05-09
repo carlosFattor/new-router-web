@@ -10,11 +10,18 @@ import Users from './components/views/users/Users.vue'
 // New user
 import User from './components/views/users/user/User.vue'
 
+// Recover password
+import RecoverPassword from './components/RecoverPassword.vue'
+
 // Routes
 const routes = [
   {
     path: '/login',
     component: LoginView
+  },
+  {
+    path: '/recover-password',
+    component: RecoverPassword
   },
   {
     path: '/',

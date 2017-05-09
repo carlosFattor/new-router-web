@@ -3,6 +3,14 @@ export default class UserService {
     this._resource = resource(url)
   }
 
+  recoverPass (email) {
+    return this._resource.save({email})
+      .then(resp => resp.json())
+      .catch(error => {
+        throw new Error(error.body.error)
+      })
+  }
+
   rootFindUser (email) {
     return this._resource.get({email})
         .then(res => res.json())
