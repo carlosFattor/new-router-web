@@ -117,39 +117,10 @@
 
             <!-- User Account Menu -->
             <li class="dropdown user user-menu tasks-menu">
-              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                <!-- The user image in the navbar-->
-                <img :src="user.avatar" class="user-image" alt="User Image">
-                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">{{ user.name }}</span>
+              <a @click="logout()" role="button">
+                <i class="fa fa-sign-out"></i>
+                Log out
               </a>
-              <ul class="dropdown-menu">
-                <li class="header">Profile</li>
-                <li>
-                  <!-- inner menu: contains the messages -->
-                  <ul class="menu">
-                    <li><!-- start message -->
-                      <router-link to="/profile">
-                        <!-- Message title and timestamp -->
-                        <h5>
-                          <small><i class="fa fa-cogs" aria-hidden="true"></i></small>
-                          Configuration
-                        </h5>
-                      </router-link>
-                    </li>
-                    <li>
-                      <a @click="logout()" role="button">
-                        <h5>
-                          <small><i class="fa fa-power-off" aria-hidden="true"></i></small>
-                          logout
-                        </h5>
-                      </a>
-                    </li>
-                    <!-- end message -->
-                  </ul>
-                  <!-- /.menu -->
-                </li>
-              </ul>
             </li>
           </ul>
         </div>
@@ -157,7 +128,8 @@
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <sidebar :display-name="user.name"
-             :picture-url="user.avatar" />
+             :picture-url="user.avatar"
+             :role="user.role" />
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -168,7 +140,7 @@
           <small>{{ $route.meta.description }}</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="javascript:;"><i class="fa fa-home"></i>Home</a></li>
+          <li><router-link to="/"><i class="fa fa-home"></i>Home</router-link></li>
           <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
       </section>
@@ -202,7 +174,7 @@ export default {
     if (email) {
       this.service.findUser(email)
       .then(res => {
-        this.user = new User(res.firstName, res.avatar, email)
+        this.user = new User(res.firstName, res.avatar, email, res.roles[0])
       })
     }
   },
@@ -250,9 +222,9 @@ export default {
 }
 
 .wrapper.hide_logo {
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .main-header .logo {
-      display: none;
+      display: none!important;
     }
   }
 }
@@ -264,7 +236,6 @@ export default {
   height:30px;
   width:100%;
   padding: 1rem;
-  text-align: right;
 }
 
 .logo-mini, .logo-lg {
@@ -279,10 +250,11 @@ export default {
   img {
     display: -webkit-inline-box;
     width: 25%;
+    background-color: transparent
   }
 }
 .user-panel {
-  height: 4em;
+  height: 4.2em;
 }
 
 hr.visible-xs-block {

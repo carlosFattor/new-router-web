@@ -1,5 +1,7 @@
 import ImgResp from '../../../shared/ImgResp.vue'
 import UserService from '../../../../services/UserService'
+import {EnumUserType} from '../../../../models/User'
+import chip from '../../../shared/chips/chip.vue'
 
 export default {
   name: 'User',
@@ -11,10 +13,13 @@ export default {
     }
   },
   components: {
-    'img-resp': ImgResp
+    'img-resp': ImgResp,
+    chip
   },
   data: function () {
     return {
+      roles: [],
+      userTypes: EnumUserType,
       user: {
         avatar: 'https://api.adorable.io/avatars/' + new Date().getTime()
       }
@@ -23,10 +28,15 @@ export default {
   computed: {
   },
   methods: {
+    removeRole: function (value) {
+      this.roles = this.roles.filter(_r => {
+        return _r !== value
+      })
+      console.log(this.user.roles)
+    },
     createUser () {
       this.$validator.validateAll()
         .then(() => {
-          console.log(this.user)
           this.service.createUser(this.user)
             .then(() => {
               this.$toasted.success('Successfully created', {
@@ -45,6 +55,9 @@ export default {
         .then(resp => {
           resp.email = email
           this.user = resp
+          for (let i = 0; i < resp.roles.length; i++) {
+            this.roles[i] = resp.roles[i]
+          }
         })
         .catch(error => {
           this.$toasted.error(error)
@@ -53,14 +66,23 @@ export default {
     updateUser () {
       this.$validator.validateAll()
       .then(() => {
-        this.service.updateProfile(this.user)
-          .then(resp => {
-            this.$toasted.success('Update success', {
-              duration: 3000
+        if (this.roles.length > 0 || this.user.roles) {
+          const _role = this.user.roles
+          if (_role) {
+            this.roles.push(_role)
+          }
+          this.user['roles'] = this.roles
+          this.service.updateProfile(this.user)
+            .then(resp => {
+              this.$toasted.success('Update success', {
+                duration: 3000
+              })
+            }).catch(() => {
+              this.$toasted.error('Error tryng update profile')
             })
-          }).catch(() => {
-            this.$toasted.error('Error tryng update profile')
-          })
+        } else {
+          this.$toasted.error('Role is necessary.')
+        }
       })
     }
   }

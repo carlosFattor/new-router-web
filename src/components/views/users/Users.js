@@ -4,15 +4,19 @@ export default {
   data: function () {
     return {
       url: 'api/v1/account-rest-api/account/users',
-      columns: ['avatar', 'firstName', 'email', 'createdAt', 'edit'],
+      columns: ['avatar', 'firstName', 'email', 'gender', 'confirmed', 'createdAt', 'edit'],
       options: {
-        perPage: 5
+        perPage: 5,
+        perPageValues: [5, 10, 15, 20],
+        columnsDisplay: {
+          'gender': 'desktop',
+          'createdAt': 'desktop'
+        }
       }
     }
   },
   methods: {
     edit: function (row) {
-      console.log(row)
       this.$router.push('/users/updateuser/' + row.email)
     },
     newUser: function () {

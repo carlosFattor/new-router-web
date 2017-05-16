@@ -9,8 +9,7 @@ import VeeValidate from 'vee-validate'
 import VueResource from 'vue-resource'
 import Auth from './auth/Auth'
 import Toasted from 'vue-toasted'
-import BootstrapVue from 'bootstrap-vue'
-// import axios from 'axios'
+import vmodal from 'vue-js-modal'
 import { ServerTable } from 'vue-tables-2'
 // Import Helpers for filters
 import { domain, count, prettyDate, pluralize } from './filters'
@@ -25,11 +24,10 @@ Vue.filter('prettyDate', prettyDate)
 Vue.filter('pluralize', pluralize)
 
 Vue.use(Vuex)
-Vue.use(BootstrapVue)
 Vue.use(VueResource)
-// Vue.use(axios)
 Vue.use(VueRouter)
 Vue.use(VeeValidate)
+Vue.use(vmodal)
 Vue.use(ServerTable, {}, true)
 Vue.use(Toasted, {
   duration: 3000

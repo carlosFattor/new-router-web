@@ -38,19 +38,19 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="password" class="col-sm-1 control-label">Password</label>
-                  <div class="col-sm-3">
-                    <input type="password" class="form-control" id="password" name="password" data-vv-as="password" v-validate data-vv-rules="min:6|max:30" placeholder="password" v-model="password">
-                    <span class="error" v-show="errors.has('password')">{{errors.first('password')}}</span>
-                  </div>
-                </div>
-                <div class="form-group">
                   <label for="gender" class="col-sm-1 control-label">Gender</label>
                   <div class="col-sm-3">
                     <select v-model="user.gender" name="gender" id="gender" class="form-control">
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-sm-1 control-label">Password</label>
+                  <div class="col-sm-3">
+                    <input type="password" class="form-control" id="password" name="password" data-vv-as="password" v-validate data-vv-rules="min:6|max:30" placeholder="password" v-model="password">
+                    <span class="error" v-show="errors.has('password')">{{errors.first('password')}}</span>
                   </div>
                 </div>
                 <div class="form-group">

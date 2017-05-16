@@ -38,7 +38,23 @@
                     <input data-vv-as="password" id="password" name="password" v-validate data-vv-rules="required|min:3|max:30" type="password" class="form-control" placeholder="Password" v-model="user.password">
                     <span class="error" v-show="errors.has('password')">{{errors.first('password')}}</span>
                   </div>
-                </div>  
+                </div> 
+                <div class="form-group">
+                  <label for="chips" class="col-sm-1 control-label">User roles</label>
+                  <div class="col-sm-1" v-for="_role in roles">
+                    <chip :role="_role" type="button" v-on:remove_role="removeRole" event="remove_role"></chip>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="role" class="col-sm-1 control-label">Add role</label>
+                  <div class="col-sm-2">
+                    <select name="role" id="role" class="form-control" v-model="user.roles">
+                      <option v-for="_type in userTypes" v-bind:value="_type.name">
+                        {{_type.name}}
+                      </option>
+                    </select>
+                  </div>
+                </div> 
                 <div class="form-group">
                   <span class="col-sm-1"></span>
                   <div class="col-sm-3">
