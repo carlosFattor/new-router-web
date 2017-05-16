@@ -76,8 +76,9 @@ export default {
         /* Setting user in the state and caching record to the localStorage */
         if (data.user) {
           const token = 'Bearer ' + data.token
-          const isAdmin = data.isAdmin || null
+          const isAdmin = data.isAdmin || false
           this.$store.commit('SET_USER', data.user)
+          this.$store.commit('SET_IS_ADMIN', isAdmin)
           this.$store.commit('SET_TOKEN', token)
           if (isAdmin) {
             data.user.isAdmin = isAdmin

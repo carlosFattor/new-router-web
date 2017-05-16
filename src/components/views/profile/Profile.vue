@@ -7,6 +7,9 @@
             <div class="col-md-2 col-sm-3 col-xs-12 avatar">
               <img-resp :url="user.avatar" :title="email" class="img-rounded"></img-resp>
               <button class="btn btn-warning btn-sm btn-avatar">change picture</button>
+              <div v-for="role in user.roles" class="col-md-12 col-sm-12 col-xs-3" style="margin-bottom: 5px;">
+                <chip :role="role" type="button"></chip>
+              </div>
             </div>
             <hr class="visible-xs-block">
             <div class="col-md-10 col-sm-9 col-xs-12">

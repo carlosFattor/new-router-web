@@ -40,8 +40,8 @@
                   </div>
                 </div> 
                 <div class="form-group">
-                  <label for="chips" class="col-sm-1 control-label">User roles</label>
-                  <div class="col-sm-1" v-for="_role in roles">
+                  <label for="chips" class="col-md-1 col-sm-1 col-xs-1 control-label">User roles</label>
+                  <div class="col-md-2 col-sm-2 col-xs-3" v-for="_role in roles">
                     <chip :role="_role" type="button" v-on:remove_role="removeRole" event="remove_role"></chip>
                   </div>
                 </div>

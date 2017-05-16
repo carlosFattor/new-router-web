@@ -13,7 +13,6 @@ export default {
       type: String
     },
     'event': {
-      required: true,
       type: String
     }
   },

@@ -8,6 +8,9 @@ export default {
   SET_USER (state, user) {
     state.user = user
   },
+  SET_IS_ADMIN (state, status) {
+    state.isAdmin = status
+  },
   SET_TOKEN (state, token) {
     state.token = token
   },
@@ -19,6 +22,8 @@ export default {
     state.pending = false
   },
   LOGOUT (state) {
-    state.isLoggedIn = false
+    state.user = null
+    state.token = null
+    state.isAdmin = false
   }
 }

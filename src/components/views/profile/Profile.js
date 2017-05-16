@@ -1,10 +1,12 @@
 import UserService from '../../../services/UserService'
 import ImgResp from '../../shared/ImgResp'
+import chip from '../../shared/chips/chip.vue'
 
 export default {
   name: 'Profile',
   components: {
-    'img-resp': ImgResp
+    'img-resp': ImgResp,
+    chip
   },
   created () {
     this.service = new UserService(this.$resource)

@@ -197,6 +197,7 @@ export default {
     logout () {
       if (window.localStorage) {
         window.localStorage.clear()
+        this.$store.commit('LOGOUT')
       }
       this.$router.push('/login')
     }
