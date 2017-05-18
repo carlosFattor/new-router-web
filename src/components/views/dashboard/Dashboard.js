@@ -1,22 +1,28 @@
+import DogProfileModal from '../../shared/modals/DogProfileModal.vue'
+import MyModal from '../../shared/modals/MyModal.vue'
 
 export default {
-
-  computed: {
-  },
-  mounted () {
-  },
-  methods: {
-    show () {
-      this.$modal.show('hello-word')
-    },
-    hide () {
-      this.$modal.hide('hello-world')
-    }
+  name: 'dashboard',
+  components: {
+    DogProfileModal,
+    'my-modal': MyModal
   },
   data: function () {
     return {
-      name: '',
-      names: ['Carlos']
+      animation: 'slide-down',
+      show: false,
+      delay: 10,
+      draggable: true,
+      transition: 'scale',
+      height: 260,
+      width: 260
+    }
+  },
+  methods: {
+    showModal () {
+      this.show = true
+    },
+    opened (event) {
     }
   }
 }

@@ -9,13 +9,15 @@ import VeeValidate from 'vee-validate'
 import VueResource from 'vue-resource'
 import Auth from './auth/Auth'
 import Toasted from 'vue-toasted'
-import vmodal from 'vue-js-modal'
 import { ServerTable } from 'vue-tables-2'
 // Import Helpers for filters
 import { domain, count, prettyDate, pluralize } from './filters'
 
 // Import Views - Top level
 import AppView from './components/App.vue'
+
+// imprt modal component
+import vmodal from 'vue-js-modal'
 
 // Import Install and register helper items
 Vue.filter('count', count)
@@ -27,12 +29,11 @@ Vue.use(Vuex)
 Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(VeeValidate)
-Vue.use(vmodal)
 Vue.use(ServerTable, {}, true)
+Vue.use(vmodal)
 Vue.use(Toasted, {
   duration: 3000
 })
-
 // Enable devtools
 Vue.config.devtools = true
 

@@ -5,44 +5,50 @@
             <div class="row">
               <div class="col-sm-12">
                 <button class="btn btn-w-m btn-primary"
-                        @click="$modal.show('hello-world')">
+                        @click="$modal.show('dog-profile')">
                   Primary
                 </button>
                 <button class="btn btn-w-m btn-default"
-                        @click="$modal.show('hello-world')">
+                        @click="showModal()">
                   Default
                 </button>
                 <button class="btn btn-w-m btn-success"
-                        @click="$modal.show('hello-world')">
+                        >
                   Success
                 </button>
                 <button class="btn btn-w-m btn-info"
-                        @click="$modal.show('hello-world')">
+                        >
                   Info
                 </button>
                 <button class="btn btn-w-m btn-warning"
-                        @click="$modal.show('hello-world')">
+                        >
                   Warning
                 </button>
                 <button class="btn btn-w-m btn-danger"
-                        @click="$modal.show('hello-world')">
+                        >
                   Danger
                 </button>
                 <button class="btn btn-w-m btn-link"
-                        @click="$modal.show('hello-world')">
+                        >
                   Link
                 </button>
               </div>
             </div>
           </div>
       </div>
-      <modal name="hello-world">
-        hello, world!
-      </modal>
+      <dog-profile-modal
+        transition="transition"
+        :height="height"
+        :width="width">
+      </dog-profile-modal>
+
+        <my-modal :show="show" :animation="animation" :duration="300" :closeButton="false" @hide="show = false">
+          <div>A vue modal with animations.</div>
+        </my-modal>
     </section>
 </template>
 
-<script srr="./Dashboard.js">
+<script src="./Dashboard.js">
 </script>
 <style src="./Dashboard.scss" lang="scss">
 </style>

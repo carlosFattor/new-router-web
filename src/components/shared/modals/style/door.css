@@ -1,0 +1,46 @@
+/* -- door -- */
+@-webkit-keyframes door-enter {
+    from {
+        -webkit-transform: scale3d(0, 1, 1);
+        transform: scale3d(0, 1, 1);
+    }
+}
+
+@keyframes door-enter {
+    from {
+        -webkit-transform: scale3d(0, 1, 1);
+        transform: scale3d(0, 1, 1);
+    }
+}
+
+.door-enter-active {
+    -webkit-animation: door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+    animation: door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@-webkit-keyframes door-leave {
+    60% {
+        -webkit-transform: scale3d(.01, 1, 1);
+        transform: scale3d(.01, 1, 1);
+    }
+    to {
+        -webkit-transform: scale3d(0, 1, .1);
+        transform: scale3d(0, 1, .1);
+    }
+}
+
+@keyframes door-leave {
+    60% {
+        -webkit-transform: scale3d(.01, 1, 1);
+        transform: scale3d(.01, 1, 1);
+    }
+    to {
+        -webkit-transform: scale3d(0, 1, .1);
+        transform: scale3d(0, 1, .1);
+    }
+}
+
+.door-leave-active {
+    -webkit-animation: door-leave both;
+    animation: door-leave both;
+}

@@ -1,0 +1,42 @@
+/* -- rotate -- */
+@-webkit-keyframes rotate-enter {
+    from {
+        -webkit-transform: rotate3d(0, 0, 1, -180deg) scale3d(.3, .3, .3);
+        transform: rotate3d(0, 0, 1, -180deg) scale3d(.3, .3, .3);
+    }
+}
+
+@keyframes rotate-enter {
+    from {
+        -webkit-transform: rotate3d(0, 0, 1, -180deg) scale3d(.3, .3, .3);
+        transform: rotate3d(0, 0, 1, -180deg) scale3d(.3, .3, .3);
+    }
+}
+
+.rotate-enter-active {
+    -webkit-animation: rotate-enter both;
+    animation: rotate-enter both;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+@-webkit-keyframes rotate-leave {
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 180deg) scale3d(.3, .3, .3);
+        transform: rotate3d(0, 0, 1, 180deg) scale3d(.3, .3, .3);
+    }
+}
+
+@keyframes rotate-leave {
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 180deg) scale3d(.3, .3, .3);
+        transform: rotate3d(0, 0, 1, 180deg) scale3d(.3, .3, .3);
+    }
+}
+
+.rotate-leave-active {
+    -webkit-animation: rotate-leave both;
+    animation: rotate-leave both;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}

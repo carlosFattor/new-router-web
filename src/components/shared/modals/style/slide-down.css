@@ -1,0 +1,38 @@
+/* -- slideDown -- */
+@-webkit-keyframes slideDown-enter {
+    from {
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+    }
+}
+
+@keyframes slideDown-enter {
+    from {
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+    }
+}
+
+.slideDown-enter-active {
+    -webkit-animation: slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
+    animation: slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@-webkit-keyframes slideDown-leave {
+    to {
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+    }
+}
+
+@keyframes slideDown-leave {
+    to {
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+    }
+}
+
+.slideDown-leave-active {
+    -webkit-animation: slideDown-leave both;
+    animation: slideDown-leave both;
+}

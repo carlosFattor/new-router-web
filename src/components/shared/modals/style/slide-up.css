@@ -1,0 +1,38 @@
+/* -- slideUp -- */
+@-webkit-keyframes slideUp-enter {
+    from {
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+}
+
+@keyframes slideUp-enter {
+    from {
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+}
+
+.slideUp-enter-active {
+    -webkit-animation: slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
+    animation: slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@-webkit-keyframes slideUp-leave {
+    to {
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+}
+
+@keyframes slideUp-leave {
+    to {
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+}
+
+.slideUp-leave-active {
+    -webkit-animation: slideUp-leave both;
+    animation: slideUp-leave both;
+}

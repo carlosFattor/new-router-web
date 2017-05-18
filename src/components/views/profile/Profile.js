@@ -5,7 +5,7 @@ import chip from '../../shared/chips/chip.vue'
 export default {
   name: 'Profile',
   components: {
-    'img-resp': ImgResp,
+    ImgResp,
     chip
   },
   created () {
