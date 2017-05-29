@@ -6,12 +6,14 @@ import NotFoundView from './components/404.vue'
 import DashboardView from './components/views/dashboard/Dashboard.vue'
 import Profile from './components/views/profile/Profile.vue'
 import Users from './components/views/users/Users.vue'
+import Activate from './components/views/users/active/Activate.vue'
 
 // New user
 import User from './components/views/users/user/User.vue'
 
 // Recover password
-import RecoverPassword from './components/RecoverPassword.vue'
+import RecoverPassword from './components/views/recover/RecoverPassword.vue'
+import RecoverValidate from './components/views/recover/RecoverValidate.vue'
 
 // Routes
 const routes = [
@@ -22,6 +24,14 @@ const routes = [
   {
     path: '/recover-password',
     component: RecoverPassword
+  },
+  {
+    path: '/recover-password/validate/:token',
+    component: RecoverValidate
+  },
+  {
+    path: '/active-user/:token',
+    component: Activate
   },
   {
     path: '/',

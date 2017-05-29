@@ -11,6 +11,22 @@ export default class UserService {
       })
   }
 
+  updatePassword (user) {
+    return this._resource.update(user)
+      .then(res => res.json())
+      .catch(() => {
+        throw new Error('It is not possible update user password')
+      })
+  }
+
+  findUserByToken (token) {
+    return this._resource.get()
+      .then(res => res.json())
+      .catch(() => {
+        throw new Error('It is not possible find user')
+      })
+  }
+
   rootFindUser (email) {
     return this._resource.get({email})
         .then(res => res.json())
