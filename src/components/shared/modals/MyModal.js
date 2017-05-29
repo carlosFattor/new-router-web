@@ -23,7 +23,7 @@ export default {
     },
     animation: {
       type: String,
-      default: 'slide-left'
+      default: 'zoom'
     },
     mask: {
       type: Boolean,

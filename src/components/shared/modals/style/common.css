@@ -1,3 +1,10 @@
+@import './slide-left.css';
+@import './slide-right.css';
+@import './slide-down.css';
+@import './zoom.css';
+@import './door.css';
+@import './flip.css';
+
 /* -- common -- */
 .mask {
     top: 0;

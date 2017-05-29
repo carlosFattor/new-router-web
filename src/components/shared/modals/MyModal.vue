@@ -4,10 +4,10 @@
             v-show="show" 
             tabindex="-1"
             :style="style" 
-            :class="className" 
+            :class="[mask, className]" 
             @keyup.esc="onEsc">
             <div class="mask" v-if="mask" @click="$emit('hide')" />
-            <transition :name="`${animation}`">
+            <transition :name="animation">
                 <div class="dialog" v-show="show" :style="dialogStyle">
                     <span class="close" v-if="closeButton" @click="$emit('hide')" />
                     <slot></slot>

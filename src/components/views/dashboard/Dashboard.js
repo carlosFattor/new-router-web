@@ -9,7 +9,7 @@ export default {
   },
   data: function () {
     return {
-      animation: 'slide-down',
+      animation: 'slideLeft',
       show: false,
       delay: 10,
       draggable: true,

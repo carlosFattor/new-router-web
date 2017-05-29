@@ -4,6 +4,7 @@ export default class LoginService {
   }
 
   login (params) {
+    console.log(params)
     return this._resource.save(params)
         .then(res => res.json(),
         () => {

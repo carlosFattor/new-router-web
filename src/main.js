@@ -46,7 +46,7 @@ const router = new VueRouter({
   }
 })
 
-Vue.http.options.root = process.env.API_URL ? process.env.API_URL : 'http://localhost:3000'
+Vue.http.options.root = process.env.API_URL ? process.env.API_URL : 'http://192.168.0.15:3000'
 Vue.http.options.xhr = {withCredentials: true}
 
 Vue.http.interceptors.push(function (request, next) {
