@@ -45,7 +45,6 @@
         <my-modal :show="show" :animation="animation" :duration="300" :closeButton="false" @hide="show = false">
           <div>A vue modal with animations.</div>
         </my-modal>
-
     </section>
 </template>
 

@@ -25,5 +25,8 @@ export default {
     state.user = null
     state.token = null
     state.isAdmin = false
+  },
+  'users/ROW_CLICK' (state, event) {
+    state.tableRow = event.row
   }
 }

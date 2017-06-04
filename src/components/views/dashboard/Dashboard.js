@@ -5,7 +5,7 @@ export default {
   name: 'dashboard',
   components: {
     DogProfileModal,
-    'my-modal': MyModal
+    MyModal
   },
   data: function () {
     return {

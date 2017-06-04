@@ -32,7 +32,6 @@ export default {
       this.roles = this.roles.filter(_r => {
         return _r !== value
       })
-      console.log(this.user.roles)
     },
     createUser () {
       this.$validator.validateAll()

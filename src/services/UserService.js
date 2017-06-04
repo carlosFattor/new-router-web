@@ -12,7 +12,7 @@ export default class UserService {
   }
 
   updatePassword (user) {
-    return this._resource.update(user)
+    return this._resource.save(user)
       .then(res => res.json())
       .catch(() => {
         throw new Error('It is not possible update user password')

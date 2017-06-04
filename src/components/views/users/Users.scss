@@ -8,3 +8,35 @@
 .btn-new-user {
     margin-bottom: 15px!important;
 }
+
+.body-content {
+    width: 95%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #D2D6DE;
+    padding: 10px 4px 4px 4px;
+    margin-left: 4px;
+}
+
+.footer-content {
+    width: 95%;
+    padding: 4px 4px 4px 4px;
+    margin-left: 4px;
+}
+.sidebar-info {
+    width: 100%;
+    margin-top: 15px;
+    border-style: none;
+}
+
+.sidebar-info img {
+    max-width: 75px;
+    border-radius: 10%;
+}
+
+.sidebar-footer {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
